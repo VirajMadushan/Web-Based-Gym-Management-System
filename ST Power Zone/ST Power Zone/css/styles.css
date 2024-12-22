@@ -1,0 +1,310 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: black; /* Matches the logo */
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a; /* Dark grey */
+    padding: 15px;
+}
+
+.logo img {
+    width: 80px; /* Adjust the width as needed */
+    height: 100px;
+    object-fit: contain; /* Ensure the aspect ratio is maintained */
+}
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: crimson; /* Matches the red in the logo */
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+/* Ensure the body takes the full height of the viewport */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* The main content area */
+main {
+    flex: 1; /* This will push the footer down when content is small */
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #1a1a1a; /* Dark background for footer */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+/* For styling the footer content */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-left, .footer-right {
+    width: 45%;
+}
+
+.footer-left h3, .footer-right h3 {
+    color: crimson;
+    margin-bottom: 10px;
+}
+
+.footer-left p {
+    line-height: 1.6;
+}
+
+.footer-right iframe {
+    width: 100%;
+    border: none;
+}
+
+/* Responsive footer adjustments */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-left, .footer-right {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-right iframe {
+        width: 100%;
+        height: 250px;
+    }
+}
+
+/* Ensure the home section takes the full viewport height */
+.section.home {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Style for the video to cover the entire section */
+.backvideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Ensure the video stays in the background */
+}
+
+/* Style for the overlay to add the desired overlay effect */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust the overlay color and opacity as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ensure the logo is properly positioned */
+.logo {
+    position: relative;
+    z-index: 1; /* Ensure the logo appears above the video */
+}
+
+
+@media (min-aspect-ratio: 16/9){
+    .backvideo{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9){
+    .backvideo{
+        width: auto;
+        height:100%;}
+}
+
+.attendance-form {
+    margin: 20px 0;
+}
+
+.attendance-form button {
+    padding: 10px 20px;
+    background-color: crimson;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.attendance-form button:hover {
+    background-color: darkred;
+}
+
+#attendanceCalendar {
+    max-width: 600px; /* Control calendar width */
+    margin: 0 auto;
+}
+
+.fc {
+    font-size: 12px; /* General calendar font size */
+}
+
+.fc-daygrid-day-number {
+    font-size: 14px; /* Smaller day number */
+}
+
+.fc-toolbar-title {
+    font-size: 16px; /* Smaller title font */
+}
+
+.fc-daygrid-day-frame {
+    height: 50px; /* Reduce cell height */
+}
+
+.fc-event {
+    font-size: 10px; /* Event text size */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: crimson;
+}
+
+.store-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.store-item {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.store-item:hover {
+    transform: translateY(-5px);
+}
+
+.item-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.item-name {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.item-price {
+    font-size: 16px;
+    color: crimson;
+}
+
+.store-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.store-item {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.store-item:hover {
+    transform: translateY(-5px);
+}
+
+.item-image {
+    width: 100%;
+    height: 200px; /* Set a fixed height */
+    object-fit: cover; /* Ensures the image fits within the container while maintaining aspect ratio */
+    border-radius: 8px;
+}
+
+.item-name {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.item-price {
+    font-size: 16px;
+    color: crimson;
+}
